@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:text_form_field_wrapper/text_form_field_wrapper.dart';
+import 'package:smartpunch/login/reg.dart';
+import 'package:smartpunch/login/text_input.dart';
+import 'package:page_transition/page_transition.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -27,8 +29,9 @@ class _LoginScreenState extends State<LoginScreen> {
       home: Scaffold(
         body: ListView(
           children: [
-            SizedBox(
+            Container(
               height: MediaQuery.of(context).size.height * 1.0,
+              color: Colors.white,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -51,39 +54,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),),
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 12.0),
-                            child: TextFormFieldWrapper(
-                              borderColor: const Color(0xff1fd527),
-                              borderFocusedColor: const Color(0xff1fd527),
-                              formField: TextFormField(
-                                controller: numberController,
-                                cursorColor: const Color(0xff1fd527),
-                                keyboardType: TextInputType.number,
-                                decoration: const InputDecoration(
-                                  border: InputBorder.none,
-                                  focusColor: Color(0xff1fd527),
-                                  hintText: 'Phone Number',
-                                ),
-                              ),
-                              position: TextFormFieldPosition.alone,
-                            ),
+                            child: MyTextInput(hintText: 'Phone Number',controller: numberController,keyboardType: TextInputType.phone,)
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 12.0),
-                            child: TextFormFieldWrapper(
-                              borderColor: const Color(0xff1fd527),
-                              borderFocusedColor: const Color(0xff1fd527),
-                              formField: TextFormField(
-                                controller: passwordController,
-                                cursorColor: const Color(0xff1fd527),
-                                keyboardType: TextInputType.visiblePassword,
-                                decoration: const InputDecoration(
-                                  border: InputBorder.none,
-                                  focusColor: Color(0xff1fd527),
-                                  hintText: 'Password',
-                                ),
-                              ),
-                              position: TextFormFieldPosition.alone,
-                            ),
+                            child: MyTextInput(hintText: 'Password',controller: passwordController,keyboardType: TextInputType.visiblePassword,)
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 10.0),
@@ -109,12 +84,20 @@ class _LoginScreenState extends State<LoginScreen> {
                             padding: const EdgeInsets.all(8.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: const [
-                                Text('Don\'t have an account? '),
-                                Text('Register', style: TextStyle(
-                                  color: Color(0xff1fd527),
-                                  fontWeight: FontWeight.bold
-                                ),)
+                              children: [
+                                const Text('Don\'t have an account? '),
+                                GestureDetector(
+                                  onTap: (){
+                                    Navigator.push(context, PageTransition(
+                                        type: PageTransitionType.bottomToTop,
+                                        duration: const Duration(seconds: 1),
+                                        child: const Register()));
+                                  },
+                                  child: const Text('Register', style: TextStyle(
+                                    color: Color(0xff1fd527),
+                                    fontWeight: FontWeight.bold
+                                  ),),
+                                )
                               ],
                             ),
                           )
