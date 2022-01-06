@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smartpunch/login/login.dart';
+import 'package:smartpunch/login/reg_success.dart';
 import 'package:smartpunch/login/text_input.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -57,13 +58,21 @@ class _RegisterState extends State<Register> {
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
                                   color: Color(0xff1fd527),
                                 ),
-                                child: const Padding(
-                                  padding: EdgeInsets.symmetric(vertical: 15.0),
-                                  child: Text('Register', textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(vertical: 15.0),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(context, PageTransition(
+                                          type: PageTransitionType.rightToLeft,
+                                          duration: const Duration(seconds: 1),
+                                          child: const RegSuccess()));
+                                    },
+                                    child: const Text('Register', textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold
+                                      ),
                                     ),
                                   ),
                                 ),
