@@ -38,6 +38,7 @@ dependencies:
   text_form_field_wrapper: ^1.0.0
   page_transition: ^2.0.4
   intl:
+  flutter_paystack_client: ^0.1.1
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +71,7 @@ flutter:
     - images/ikeja.png
     - images/paystack.png
     - images/phed.png
+    - images/wallet.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

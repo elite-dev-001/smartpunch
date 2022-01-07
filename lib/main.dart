@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_paystack_client/flutter_paystack_client.dart';
 import 'package:smartpunch/login/login.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+
+  Future<void> main() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    String paystackPublicKey = 'pk_test_c8bd6ba27978f93fde84d7e44903dd65050853b9';
+    await PaystackClient.initialize(paystackPublicKey);
+
+    runApp(const MyApp());
+  }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:smartpunch/Account/fund_account.dart';
 
 
 class Balance extends StatelessWidget {
@@ -62,7 +64,12 @@ class Balance extends StatelessWidget {
                   Row(
                     children: [
                       IconButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.push(context, PageTransition(
+                                type: PageTransitionType.rightToLeft,
+                                duration: const Duration(milliseconds: 950),
+                                child: FundAccount()));
+                          },
                           icon: const Icon(
                             Icons.add_circle,
                             color: Colors.white,
