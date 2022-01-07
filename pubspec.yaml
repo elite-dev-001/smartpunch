@@ -66,6 +66,10 @@ flutter:
     - images/logo.png
     - images/check.png
     - images/check2.png
+    - images/eko.jpeg
+    - images/ikeja.png
+    - images/paystack.png
+    - images/phed.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

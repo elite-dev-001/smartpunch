@@ -17,7 +17,7 @@ class Balance extends StatelessWidget {
     }
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 18),
+      padding: const EdgeInsets.only(top: 35, bottom: 20),
       child: Container(
         height: MediaQuery.of(context).size.height * 0.3,
         decoration: BoxDecoration(

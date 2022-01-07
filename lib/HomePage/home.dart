@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smartpunch/HomePage/components/balance.dart';
 import 'package:smartpunch/HomePage/components/service_holder.dart';
+import 'package:smartpunch/HomePage/components/transaction.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -12,11 +13,26 @@ class Home extends StatelessWidget {
         onPressed: (){},
         child: const Icon(Icons.add),
       ),
-      body: ListView(
-        children: const [
-          Balance(),
-          ServiceHolder()
-        ],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height * 1,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Balance(),
+              ServiceHolder(),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 15.0),
+                child: Text('Recent Transactions', style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16.0,
+                ),),
+              ),
+              Transaction()
+            ],
+          ),
+        ),
       ),
     );
   }
