@@ -64,7 +64,7 @@ class _RegisterState extends State<Register> {
                                     onTap: () {
                                       Navigator.push(context, PageTransition(
                                           type: PageTransitionType.rightToLeft,
-                                          duration: const Duration(seconds: 1),
+                                          duration: const Duration(milliseconds: 950),
                                           child: const RegSuccess()));
                                     },
                                     child: const Text('Register', textAlign: TextAlign.center,

@@ -29,6 +29,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Splash screen Demo',
       home: example1,
+      theme: ThemeData(
+        primarySwatch: Colors.green
+      ),
       debugShowCheckedModeBanner: false,
     );
   }

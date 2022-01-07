@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smartpunch/HomePage/home.dart';
 import 'package:smartpunch/login/reg.dart';
 import 'package:smartpunch/login/text_input.dart';
 import 'package:page_transition/page_transition.dart';
@@ -62,20 +63,28 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 10.0),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width,
-                              decoration: const BoxDecoration(
-                                borderRadius: BorderRadius.all(Radius.circular(10)),
-                                color: Color(0xff1fd527),
-                              ),
-                              child: const Padding(
-                                padding: EdgeInsets.symmetric(vertical: 15.0),
-                                child: Text('Login', textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(context, PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    duration: const Duration(milliseconds: 950),
+                                    child: const Home()));
+                              },
+                              child: Container(
+                                width: MediaQuery.of(context).size.width,
+                                decoration: const BoxDecoration(
+                                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                                  color: Color(0xff1fd527),
                                 ),
+                                child: const Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 15.0),
+                                  child: Text('Login', textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold
+                                  ),
+                                  ),
                                 ),
                               ),
                             ),
@@ -90,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   onTap: (){
                                     Navigator.push(context, PageTransition(
                                         type: PageTransitionType.bottomToTop,
-                                        duration: const Duration(seconds: 1),
+                                        duration: const Duration(milliseconds: 950),
                                         child: const Register()));
                                   },
                                   child: const Text('Register', style: TextStyle(
