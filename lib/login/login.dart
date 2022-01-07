@@ -67,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               onTap: () {
                                 Navigator.push(context, PageTransition(
                                     type: PageTransitionType.rightToLeft,
-                                    duration: const Duration(milliseconds: 950),
+                                    duration: const Duration(milliseconds: 600),
                                     child: const Home()));
                               },
                               child: Container(
@@ -99,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   onTap: (){
                                     Navigator.push(context, PageTransition(
                                         type: PageTransitionType.bottomToTop,
-                                        duration: const Duration(milliseconds: 950),
+                                        duration: const Duration(milliseconds: 800),
                                         child: const Register()));
                                   },
                                   child: const Text('Register', style: TextStyle(

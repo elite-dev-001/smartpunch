@@ -73,12 +73,12 @@ class _FundAccountState extends State<FundAccount> {
                     if(res.status) {
                       Navigator.push(context, PageTransition(
                           type: PageTransitionType.rightToLeft,
-                          duration: const Duration(milliseconds: 950),
+                          duration: const Duration(milliseconds: 600),
                           child: const SuccessPayment()));
                     }else {
                       Navigator.push(context, PageTransition(
                           type: PageTransitionType.rightToLeft,
-                          duration: const Duration(milliseconds: 950),
+                          duration: const Duration(milliseconds: 600),
                           child: const ErrorPayment()));
                     }
 

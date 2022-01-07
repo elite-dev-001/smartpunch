@@ -67,8 +67,8 @@ class Balance extends StatelessWidget {
                           onPressed: (){
                             Navigator.push(context, PageTransition(
                                 type: PageTransitionType.rightToLeft,
-                                duration: const Duration(milliseconds: 950),
-                                child: FundAccount()));
+                                duration: const Duration(milliseconds: 600),
+                                child: const FundAccount()));
                           },
                           icon: const Icon(
                             Icons.add_circle,

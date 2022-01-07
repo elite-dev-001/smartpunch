@@ -40,7 +40,7 @@ class RegSuccess extends StatelessWidget {
                             onTap: () {
                               Navigator.push(context, PageTransition(
                                   type: PageTransitionType.leftToRight,
-                                  duration: const Duration(milliseconds: 950),
+                                  duration: const Duration(milliseconds: 600),
                                   child: const LoginScreen()));
                             },
                             child: Container(
