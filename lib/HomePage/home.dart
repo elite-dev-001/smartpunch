@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:smartpunch/HomePage/components/balance.dart';
 import 'package:smartpunch/HomePage/components/service_holder.dart';
 import 'package:smartpunch/HomePage/components/transaction.dart';
+import 'package:smartpunch/Services/new_device.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -10,7 +12,12 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          Navigator.push(context, PageTransition(
+              type: PageTransitionType.bottomToTop,
+              duration: const Duration(milliseconds: 600),
+              child: const NewDevice()));
+        },
         child: const Icon(Icons.add),
       ),
       body: Padding(

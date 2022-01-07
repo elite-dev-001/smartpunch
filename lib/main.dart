@@ -15,14 +15,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget example1 = SplashScreenView(
       navigateRoute: const LoginScreen(),
-      duration: 5000,
+      duration: 8000,
       // imageSize: 130,
       imageSrc: "images/logo.png",
-      text: "Smartpunch",
+      text: "Your number 1 Automated Electricity Solutions",
       textType: TextType.TyperAnimatedText,
       textStyle: const TextStyle(
-        fontSize: 40.0,
-        color: Colors.green,
+        fontSize: 18.0,
+        color: Color(0xff1fd527),
         fontWeight: FontWeight.bold
       ),
       backgroundColor: Colors.white,

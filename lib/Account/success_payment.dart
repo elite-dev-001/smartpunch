@@ -23,11 +23,11 @@ class _SuccessPaymentState extends State<SuccessPayment> {
       oneSec,
           (Timer timer) {
         if (_start == 0) {
-          dispose();
           Navigator.push(context, PageTransition(
               type: PageTransitionType.leftToRight,
               duration: const Duration(milliseconds: 600),
               child: const Home()));
+          dispose();
         } else {
           setState(() {
             _start--;

@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:smartpunch/HomePage/components/service.dart';
+import 'package:smartpunch/Services/service_providers.dart';
 
 
 class ServiceHolder extends StatelessWidget {
@@ -8,11 +10,17 @@ class ServiceHolder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void providerList() {
+      Navigator.push(context, PageTransition(
+          type: PageTransitionType.rightToLeft,
+          duration: const Duration(milliseconds: 600),
+          child: const ServiceProviders()));
+    }
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: const [
+        children: [
           Service(
             color: 0xff0000FF,
             icon: Icons.how_to_reg_rounded,
@@ -20,6 +28,7 @@ class ServiceHolder extends StatelessWidget {
             secondText: 'Check to see all your registered devices and also register'
                 'as many as possible',
             lastText: 'View Devices',
+            myFunc: (){},
           ),
           Service(
             color: 0xff7F00FF,
@@ -28,6 +37,7 @@ class ServiceHolder extends StatelessWidget {
             secondText: 'Check to see the list of available service providers '
                 'and their various packages',
             lastText: 'Open',
+            myFunc: providerList,
           ),
         ],
       ),

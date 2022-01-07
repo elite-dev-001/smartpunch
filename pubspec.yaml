@@ -40,6 +40,7 @@ dependencies:
   intl:
   flutter_paystack_client: ^0.1.1
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -73,6 +74,14 @@ flutter:
     - images/phed.png
     - images/wallet.png
     - images/error.png
+    - images/providers/bedc.png
+    - images/providers/eedc.jpeg
+    - images/providers/ibadan.jpeg
+    - images/providers/jos.png
+    - images/providers/kaduna.jpeg
+    - images/providers/kedco.png
+    - images/providers/phcn.png
+    - images/providers/yedc.jpeg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
