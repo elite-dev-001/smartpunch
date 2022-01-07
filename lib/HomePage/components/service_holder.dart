@@ -26,7 +26,7 @@ class ServiceHolder extends StatelessWidget {
             icon: Icons.how_to_reg_rounded,
             firstText: 'Registered Devices',
             secondText: 'Check to see all your registered devices and also register'
-                'as many as possible',
+                ' as many as possible',
             lastText: 'View Devices',
             myFunc: (){},
           ),

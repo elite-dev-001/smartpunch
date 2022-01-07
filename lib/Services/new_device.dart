@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:smartpunch/Services/device_success.dart';
 import 'package:smartpunch/Services/dropdown.dart';
 import 'package:smartpunch/login/text_input.dart';
 
@@ -37,7 +39,35 @@ class NewDevice extends StatelessWidget {
                   keyboardType: TextInputType.phone
               ),
             ),
-            const DropDown()
+            const DropDown(),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10.0),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(context, PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      duration: const Duration(milliseconds: 600),
+                      child: const DeviceSuccess()));
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    color: Color(0xff1fd527),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 15.0),
+                    child: Text('Register', textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

@@ -96,7 +96,7 @@ class _DropDownState extends State<DropDown> {
       child: ListTile(
         leading: CircleAvatar(backgroundImage: AssetImage(item['image'].toString()),),
         title: Text(item['name'].toString()),
-        // dense: true,
+        dense: true,
       )
   );
 }
