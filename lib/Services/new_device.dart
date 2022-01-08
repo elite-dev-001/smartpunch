@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:smartpunch/Services/device_success.dart';
 import 'package:smartpunch/Services/dropdown.dart';
+import 'package:smartpunch/Services/package.dart';
 import 'package:smartpunch/login/text_input.dart';
 
 
@@ -13,6 +14,7 @@ class NewDevice extends StatelessWidget {
 
     TextEditingController deviceController = TextEditingController();
     TextEditingController numberController = TextEditingController();
+    TextEditingController meterController = TextEditingController();
 
     return Scaffold(
       appBar: AppBar(
@@ -40,6 +42,15 @@ class NewDevice extends StatelessWidget {
               ),
             ),
             const DropDown(),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: MyTextInput(
+                  hintText: 'Customer ID (Meter Number)',
+                  controller: meterController,
+                  keyboardType: TextInputType.number
+              ),
+            ),
+            const Package(),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10.0),
               child: GestureDetector(

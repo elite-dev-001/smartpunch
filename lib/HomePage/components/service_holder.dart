@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:smartpunch/HomePage/components/service.dart';
+import 'package:smartpunch/Payments/reg_devices.dart';
 import 'package:smartpunch/Services/service_providers.dart';
 
 
@@ -16,6 +17,13 @@ class ServiceHolder extends StatelessWidget {
           duration: const Duration(milliseconds: 600),
           child: const ServiceProviders()));
     }
+
+    void regDevice() {
+      Navigator.push(context, PageTransition(
+          type: PageTransitionType.leftToRight,
+          duration: const Duration(milliseconds: 600),
+          child: const RegisteredDevices()));
+    }
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
       child: Row(
@@ -28,7 +36,7 @@ class ServiceHolder extends StatelessWidget {
             secondText: 'Check to see all your registered devices and also register'
                 ' as many as possible',
             lastText: 'View Devices',
-            myFunc: (){},
+            myFunc: regDevice,
           ),
           Service(
             color: 0xff7F00FF,
