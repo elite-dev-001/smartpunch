@@ -5,12 +5,14 @@ class MyTextInput extends StatelessWidget {
   const MyTextInput({Key? key,
     required this.hintText,
     required this.controller,
-    required this.keyboardType
+    required this.keyboardType,
+    this.readOnly = false
   }) : super(key: key);
 
   final String hintText;
   final TextEditingController controller;
   final TextInputType keyboardType;
+  final bool readOnly;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class MyTextInput extends StatelessWidget {
       borderColor: const Color(0xff1fd527),
       borderFocusedColor: const Color(0xff1fd527),
       formField: TextFormField(
+        readOnly: readOnly,
         controller: controller,
         cursorColor: const Color(0xff1fd527),
         keyboardType: keyboardType,
