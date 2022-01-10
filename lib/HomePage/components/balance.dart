@@ -21,10 +21,10 @@ class Balance extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 35, bottom: 20),
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.3,
+        height: MediaQuery.of(context).size.height * 0.25,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
-          color: const Color(0xff1fd527).withOpacity(.9)
+            color: const Color(0xff40196D)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -40,7 +40,7 @@ class Balance extends StatelessWidget {
                   ),),
                 ],
               ),
-              height: MediaQuery.of(context).size.height * 0.09,
+              height: MediaQuery.of(context).size.height * 0.075,
             ),
             SizedBox(
               child: Column(
@@ -55,7 +55,7 @@ class Balance extends StatelessWidget {
                   )
                 ],
               ),
-              height: MediaQuery.of(context).size.height * 0.12,
+              height: MediaQuery.of(context).size.height * 0.1,
             ),
             SizedBox(
               child: Column(
@@ -86,7 +86,7 @@ class Balance extends StatelessWidget {
                   ),
                 ],
               ),
-              height: MediaQuery.of(context).size.height * 0.09,
+              height: MediaQuery.of(context).size.height * 0.075,
             ),
           ],
         ),

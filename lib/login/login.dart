@@ -25,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: const Color(0xff1fd527)
+        primaryColor: const Color(0xff40196D)
       ),
       home: Scaffold(
         body: ListView(
@@ -38,7 +38,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   SizedBox(
                       height: MediaQuery.of(context).size.height * 0.35,
-                      child: Image.asset('images/logo.png')
+                      child: Image.asset('images/logo.png'),
+                      width: MediaQuery.of(context).size.width * .70,
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * .5,
@@ -51,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               fontSize: 25.0,
                               fontStyle: FontStyle.italic,
                               fontWeight: FontWeight.bold,
-                              color: Color(0xff1fd527)
+                              color: Color(0xff40196D)
                           ),),
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 12.0),
@@ -74,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 width: MediaQuery.of(context).size.width,
                                 decoration: const BoxDecoration(
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
-                                  color: Color(0xff1fd527),
+                                  color: Color(0xff40196D),
                                 ),
                                 child: const Padding(
                                   padding: EdgeInsets.symmetric(vertical: 15.0),
@@ -103,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         child: const Register()));
                                   },
                                   child: const Text('Register', style: TextStyle(
-                                    color: Color(0xff1fd527),
+                                      color: Color(0xff40196D),
                                     fontWeight: FontWeight.bold
                                   ),),
                                 )

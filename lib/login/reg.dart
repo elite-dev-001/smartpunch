@@ -34,8 +34,9 @@ class _RegisterState extends State<Register> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.15,
+                    height: MediaQuery.of(context).size.height * 0.1,
                     child: Image.asset('images/logo.png'),
+                    width: MediaQuery.of(context).size.width * .70,
                   ),
                   SizedBox(
                       height: MediaQuery.of(context).size.height * 0.7,
@@ -56,7 +57,7 @@ class _RegisterState extends State<Register> {
                                 width: MediaQuery.of(context).size.width,
                                 decoration: const BoxDecoration(
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
-                                  color: Color(0xff1fd527),
+                                  color: Color(0xff40196D),
                                 ),
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(vertical: 15.0),
@@ -92,7 +93,7 @@ class _RegisterState extends State<Register> {
                                           child: const LoginScreen()));
                                     },
                                     child: const Text('Login', style: TextStyle(
-                                        color: Color(0xff1fd527),
+                                        color: Color(0xff40196D),
                                         fontWeight: FontWeight.bold
                                     ),),
                                   )

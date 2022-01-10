@@ -29,7 +29,7 @@ class RegSuccess extends StatelessWidget {
                         const Padding(
                           padding: EdgeInsets.all(12.0),
                           child: Text('Registration Successful', style: TextStyle(
-                            color: Color(0xff1fd527),
+                              color: Color(0xff40196D),
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold
                           ),),
@@ -47,7 +47,7 @@ class RegSuccess extends StatelessWidget {
                               width: MediaQuery.of(context).size.width,
                               decoration: const BoxDecoration(
                                 borderRadius: BorderRadius.all(Radius.circular(10)),
-                                color: Color(0xff1fd527),
+                                color: Color(0xff40196D),
                               ),
                               child: const Padding(
                                 padding: EdgeInsets.symmetric(vertical: 15.0),

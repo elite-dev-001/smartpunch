@@ -16,13 +16,13 @@ class MyApp extends StatelessWidget {
     Widget example1 = SplashScreenView(
       navigateRoute: const LoginScreen(),
       duration: 8000,
-      // imageSize: 130,
+      imageSize: 130,
       imageSrc: "images/logo.png",
       text: "Your number 1 Automated Electricity Solutions",
       textType: TextType.TyperAnimatedText,
       textStyle: const TextStyle(
         fontSize: 18.0,
-        color: Color(0xff1fd527),
+        color: Color(0xff40196D),
         fontWeight: FontWeight.bold
       ),
       backgroundColor: Colors.white,
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       title: 'Splash screen Demo',
       home: example1,
       theme: ThemeData(
-        primarySwatch: Colors.green
+        primaryColor: const Color(0xff40196D)
       ),
       debugShowCheckedModeBanner: false,
     );

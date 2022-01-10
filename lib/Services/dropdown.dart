@@ -71,7 +71,7 @@ class _DropDownState extends State<DropDown> {
         margin: const EdgeInsets.symmetric(vertical: 16, horizontal: 0),
         padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 12),
         decoration: BoxDecoration(
-          border: Border.all(color: const Color(0xff1fd527), width: 4),
+          border: Border.all(color: const Color(0xff40196D), width: 3),
           borderRadius: BorderRadius.circular(12.0),
         ),
         child: DropdownButtonHideUnderline(
@@ -80,7 +80,7 @@ class _DropDownState extends State<DropDown> {
               isExpanded: true,
               iconSize: 36,
               hint: const Text('Select your Service Provider'),
-              icon: const Icon(Icons.arrow_drop_down,color: Color(0xff1fd527),),
+              icon: const Icon(Icons.arrow_drop_down,color: Color(0xff40196D),),
               items: serviceProviders.map(buildMenuItem).toList(),
               onChanged: (value) => setState(() {
                 this.value = value;

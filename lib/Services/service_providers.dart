@@ -61,14 +61,17 @@ class ServiceProviders extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Available Service Providers'),
+        backgroundColor: const Color(0xff40196D),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListView(
           children: serviceProviders.map((e) => ListTile(
             leading: CircleAvatar(backgroundImage: AssetImage(e['image'].toString()),),
-            title: Text(e['name'].toString()),
-            // dense: true,
+            title: Text(e['name'].toString(), style: const TextStyle(
+                color: Color(0xff40196D)
+            ),),
+            dense: true,
           )).toList(),
         ),
       ),

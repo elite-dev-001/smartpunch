@@ -35,6 +35,7 @@ class RegisteredDevices extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Registered Devices'),
+        backgroundColor: const Color(0xff40196D),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -43,12 +44,12 @@ class RegisteredDevices extends StatelessWidget {
             leading: CircleAvatar(backgroundImage: AssetImage(e['image'].toString()),),
             title: Text(e['name'].toString()),
             subtitle: Text(e['meterID'].toString(), style: const TextStyle(
-                color: Color(0xff1fd527),
+                color: Color(0xff40196D),
                 fontWeight: FontWeight.bold
             ),),
             trailing: const Icon(
                 Icons.arrow_forward_ios,
-                color: Color(0xff1fd527)
+                color: Color(0xff40196D)
             ),
             onTap: (){
               Navigator.push(context, PageTransition(

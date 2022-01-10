@@ -19,6 +19,7 @@ class NewDevice extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Register a new Device'),
+        backgroundColor: const Color(0xff40196D),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 20),
@@ -64,7 +65,7 @@ class NewDevice extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
-                    color: Color(0xff1fd527),
+                    color: Color(0xff40196D),
                   ),
                   child: const Padding(
                     padding: EdgeInsets.symmetric(vertical: 15.0),

@@ -74,7 +74,7 @@ class _DeviceSuccessState extends State<DeviceSuccess> {
                         const Padding(
                           padding: EdgeInsets.all(12.0),
                           child: Text('Device Registration Successful', style: TextStyle(
-                              color: Color(0xff1fd527),
+                              color: Color(0xff40196D),
                               fontSize: 20.0,
                               fontWeight: FontWeight.bold
                           ),),

@@ -12,6 +12,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        backgroundColor: const Color(0xff40196D),
         onPressed: (){
           Navigator.push(context, PageTransition(
               type: PageTransitionType.bottomToTop,

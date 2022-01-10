@@ -15,13 +15,15 @@ class Transaction extends StatelessWidget {
               backgroundImage: AssetImage('images/eko.jpeg'),
               backgroundColor: Colors.transparent,
             ),
-            title: const Text('Eko Electricity Distribution Company',
+            title: const Text('Eko Electricity ',
             style: TextStyle(
-              color: Color(0xff1fd527),
-              fontWeight: FontWeight.bold
+                color: Color(0xff000000),
             ),
             ),
-            subtitle: const Text('10:53 AM'),
+            subtitle: const Text('10:53 AM', style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color(0xff40196D)
+            ),),
             trailing: const Text('- 3,500', style: TextStyle(
                 color: Colors.red,
                 fontWeight: FontWeight.bold
@@ -35,11 +37,13 @@ class Transaction extends StatelessWidget {
             ),
             title: const Text('PAYSTACK.COM/LOOKUP',
               style: TextStyle(
-                  color: Color(0xff1fd527),
-                  fontWeight: FontWeight.bold
+                  color: Color(0xff000000),
               ),
             ),
-            subtitle: const Text('03:11 PM'),
+            subtitle: const Text('03:11 PM', style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Color(0xff40196D)
+            ),),
             trailing: const Text('+20,000',style: TextStyle(
                 color: Colors.green,
                 fontWeight: FontWeight.bold
@@ -51,13 +55,15 @@ class Transaction extends StatelessWidget {
             leading: const CircleAvatar(
               backgroundImage: AssetImage('images/phed.png')
             ),
-            title: const Text('Port Harcourt Electricity Distribution Company',
+            title: const Text('Port Harcourt Electricity Distribution...',
               style: TextStyle(
-                  color: Color(0xff1fd527),
-                  fontWeight: FontWeight.bold
+                  color: Color(0xff000000),
               ),
             ),
-            subtitle: const Text('04:23 PM'),
+            subtitle: const Text('04:23 PM', style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Color(0xff40196D)
+            ),),
             trailing: const Text('- 6000',style: TextStyle(
                 color: Colors.red,
                 fontWeight: FontWeight.bold
@@ -67,15 +73,17 @@ class Transaction extends StatelessWidget {
           ),
           ListTile(
             leading: const CircleAvatar(
-              backgroundImage: AssetImage('images/ikeja.png')
+              backgroundImage: AssetImage('images/providers/kedco.png')
             ),
-            title: const Text('Ikeja Electricity Distribution Company',
+            title: const Text('kEDCO',
               style: TextStyle(
-                  color: Color(0xff1fd527),
-                  fontWeight: FontWeight.bold
+                  color: Color(0xff000000),
               ),
             ),
-            subtitle: const Text('11:49 AM'),
+            subtitle: const Text('11:49 AM', style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Color(0xff40196D)
+            ),),
             trailing: const Text('- 4520',style: TextStyle(
                 color: Colors.red,
                 fontWeight: FontWeight.bold
