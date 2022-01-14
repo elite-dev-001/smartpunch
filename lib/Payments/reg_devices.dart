@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:smartpunch/Payments/make_payment.dart';
+import 'package:smartpunch/Services/new_device.dart';
 
 
 class RegisteredDevices extends StatelessWidget {
@@ -33,6 +34,16 @@ class RegisteredDevices extends StatelessWidget {
     ];
 
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: const Color(0xff40196D),
+        onPressed: (){
+          Navigator.push(context, PageTransition(
+              type: PageTransitionType.bottomToTop,
+              duration: const Duration(milliseconds: 600),
+              child: const NewDevice()));
+        },
+        child: const Icon(Icons.add),
+      ),
       appBar: AppBar(
         title: const Text('Registered Devices'),
         backgroundColor: const Color(0xff40196D),
@@ -64,3 +75,5 @@ class RegisteredDevices extends StatelessWidget {
     );
   }
 }
+
+

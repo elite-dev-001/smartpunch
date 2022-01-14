@@ -19,12 +19,12 @@ class Balance extends StatelessWidget {
     }
 
     return Padding(
-      padding: const EdgeInsets.only(top: 35, bottom: 20),
+      padding: const EdgeInsets.only(top: 0, bottom: 20),
       child: Container(
         height: MediaQuery.of(context).size.height * 0.25,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
-            color: const Color(0xff40196D)
+            color: const Color(0xff40196D).withOpacity(0.8)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -34,6 +34,17 @@ class MakePayment extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Make Payments'),
         backgroundColor: const Color(0xff40196D),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 10.0),
+            child: IconButton(
+                onPressed: (){
+                  showAlertDialog(context);
+                },
+                icon: const Icon(Icons.delete_forever)
+            ),
+          )
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -164,4 +175,44 @@ class MakePayment extends StatelessWidget {
       ),
     );
   }
+}
+
+showAlertDialog(BuildContext context) {
+  // Create button
+  Widget okButton = TextButton(
+    child: const Text("OK", style: TextStyle(
+        color: Colors.green
+    ),),
+    onPressed: () {
+      Navigator.of(context).pop();
+    },
+  );
+
+  Widget cancelButton = TextButton(
+    child: const Text("Cancel", style: TextStyle(
+        color: Colors.red
+    ),),
+    onPressed: () {
+      Navigator.of(context).pop();
+    },
+  );
+
+  // Create AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: const Text("Remove Registered Device"),
+    content: const Text("This will remove the registered device permanently."
+        " Are you sure you want to continue?"),
+    actions: [
+      cancelButton,
+      okButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }
