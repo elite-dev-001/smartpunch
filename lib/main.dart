@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smartpunch/Onboarding/onboarding_page.dart';
 import 'package:smartpunch/login/login.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'Splash screen Demo',
-      home: example1,
+      home: const OnBoardingPage(),
       theme: ThemeData(
         primaryColor: const Color(0xff40196D)
       ),

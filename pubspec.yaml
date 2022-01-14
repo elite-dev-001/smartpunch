@@ -39,6 +39,7 @@ dependencies:
   page_transition: ^2.0.4
   intl:
   flutter_paystack_client: ^0.1.1
+  introduction_screen: ^2.1.0
 
 
 
@@ -91,6 +92,9 @@ flutter:
     - images/providers/kedco.png
     - images/providers/phcn.png
     - images/providers/yedc.jpeg
+    - images/onboard/screen1.png
+    - images/onboard/screen2.png
+    - images/onboard/screen3.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
