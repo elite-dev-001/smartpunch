@@ -35,7 +35,7 @@ class RegisteredDevices extends StatelessWidget {
 
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color(0xff40196D),
+        backgroundColor: const Color(0xFF0D60D8),
         onPressed: (){
           Navigator.push(context, PageTransition(
               type: PageTransitionType.bottomToTop,
@@ -45,8 +45,8 @@ class RegisteredDevices extends StatelessWidget {
         child: const Icon(Icons.add),
       ),
       appBar: AppBar(
-        title: const Text('Registered Devices'),
-        backgroundColor: const Color(0xff40196D),
+        title: const Text('Load Devices'),
+        backgroundColor: const Color(0xFF0D60D8),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -55,12 +55,12 @@ class RegisteredDevices extends StatelessWidget {
             leading: CircleAvatar(backgroundImage: AssetImage(e['image'].toString()),),
             title: Text(e['name'].toString()),
             subtitle: Text(e['meterID'].toString(), style: const TextStyle(
-                color: Color(0xff40196D),
+                color: Color(0xFF0D60D8),
                 fontWeight: FontWeight.bold
             ),),
             trailing: const Icon(
                 Icons.arrow_forward_ios,
-                color: Color(0xff40196D)
+                color: Color(0xFF0D60D8)
             ),
             onTap: (){
               Navigator.push(context, PageTransition(

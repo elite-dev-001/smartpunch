@@ -48,12 +48,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Column(
                         // mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          const Text('LOGIN', style: TextStyle(
-                              fontSize: 25.0,
-                              fontStyle: FontStyle.italic,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xff40196D)
-                          ),),
+                          // const Text('LOGIN', style: TextStyle(
+                          //     fontSize: 25.0,
+                          //     fontStyle: FontStyle.italic,
+                          //     fontWeight: FontWeight.bold,
+                          //     color: Color(0xff40196D)
+                          // ),),
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 12.0),
                             child: MyTextInput(hintText: 'Phone Number',controller: numberController,keyboardType: TextInputType.phone,)
@@ -75,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 width: MediaQuery.of(context).size.width,
                                 decoration: const BoxDecoration(
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
-                                  color: Color(0xff40196D),
+                                  color: Color(0xFF0D60D8),
                                 ),
                                 child: const Padding(
                                   padding: EdgeInsets.symmetric(vertical: 15.0),
@@ -104,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         child: const Register()));
                                   },
                                   child: const Text('Register', style: TextStyle(
-                                      color: Color(0xff40196D),
+                                      color: Color(0xFF0D60D8),
                                     fontWeight: FontWeight.bold
                                   ),),
                                 )

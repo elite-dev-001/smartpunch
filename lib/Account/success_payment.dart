@@ -70,7 +70,7 @@ class _SuccessPaymentState extends State<SuccessPayment> {
                       const Padding(
                         padding: EdgeInsets.all(12.0),
                         child: Text('Payment Successful', style: TextStyle(
-                            color: Color(0xff40196D),
+                            color: Color(0xFF0D60D8),
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold
                         ),),
@@ -78,7 +78,7 @@ class _SuccessPaymentState extends State<SuccessPayment> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 30.0),
                         child: Text(_start.toString(), style: const TextStyle(
-                            color: Color(0xff40196D),
+                            color: Color(0xFF0D60D8),
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold
                         ),)

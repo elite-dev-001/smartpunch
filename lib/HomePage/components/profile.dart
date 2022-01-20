@@ -17,7 +17,7 @@ class Profile extends StatelessWidget {
           const Text('David', style: TextStyle(
             fontSize: 25,
             fontWeight: FontWeight.bold,
-            color: Color(0xff40196D)
+            color: Color(0xFF000000)
           ),),
           IconButton(
               padding: const EdgeInsets.all(0.0),
@@ -27,7 +27,7 @@ class Profile extends StatelessWidget {
                     duration: const Duration(milliseconds: 600),
                     child: const MyAccount()));
               },
-              color: const Color(0xff40196D),
+              color: const Color(0xFF000000),
               iconSize: 30,
               icon: const Icon(Icons.account_circle_sharp)
           )

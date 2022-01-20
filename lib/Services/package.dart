@@ -22,7 +22,7 @@ class _PackageState extends State<Package> {
           margin: const EdgeInsets.symmetric(vertical: 16, horizontal: 0),
           padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 12),
           decoration: BoxDecoration(
-            border: Border.all(color: const Color(0xff40196D), width: 3),
+            border: Border.all(color: const Color(0xFF0D60D8), width: 3),
             borderRadius: BorderRadius.circular(12.0),
           ),
           child: DropdownButtonHideUnderline(
@@ -31,7 +31,7 @@ class _PackageState extends State<Package> {
               isExpanded: true,
               iconSize: 36,
               hint: const Text('Choose your Package'),
-              icon: const Icon(Icons.arrow_drop_down,color: Color(0xff40196D),),
+              icon: const Icon(Icons.arrow_drop_down,color: Color(0xFF0D60D8),),
               items: packages.map(buildMenuItem).toList(),
               onChanged: (value) => setState(() {
                 this.value = value;

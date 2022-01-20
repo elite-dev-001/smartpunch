@@ -30,21 +30,13 @@ class _HomeState extends State<Home> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 22),
             child: SizedBox(
-              height: MediaQuery.of(context).size.height * 1,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              // height: MediaQuery.of(context).size.height * 1,
+              child: ListView(
+                // crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
                   Profile(),
                   Balance(),
                   ServiceHolder(),
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 15.0),
-                    child: Text('Recent Transactions', style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.0,
-                    ),),
-                  ),
-                  Transaction()
                 ],
               ),
             ),

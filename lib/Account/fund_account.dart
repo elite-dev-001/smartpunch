@@ -45,7 +45,7 @@ class _FundAccountState extends State<FundAccount> {
                 child: Text('How much would you like to add to your account',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Color(0xff40196D),
+                  color: Color(0xFF0D60D8),
                   fontWeight: FontWeight.bold,
                   fontSize: 18
                 ),
@@ -87,7 +87,7 @@ class _FundAccountState extends State<FundAccount> {
                     width: MediaQuery.of(context).size.width,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      color: Color(0xff40196D),
+                      color: Color(0xFF0D60D8),
                     ),
                     child: const Padding(
                       padding: EdgeInsets.symmetric(vertical: 15.0),

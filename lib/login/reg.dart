@@ -57,7 +57,7 @@ class _RegisterState extends State<Register> {
                                 width: MediaQuery.of(context).size.width,
                                 decoration: const BoxDecoration(
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
-                                  color: Color(0xff40196D),
+                                  color: Color(0xFF0D60D8),
                                 ),
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(vertical: 15.0),
@@ -93,7 +93,7 @@ class _RegisterState extends State<Register> {
                                           child: const LoginScreen()));
                                     },
                                     child: const Text('Login', style: TextStyle(
-                                        color: Color(0xff40196D),
+                                        color: Color(0xFF0D60D8),
                                         fontWeight: FontWeight.bold
                                     ),),
                                   )

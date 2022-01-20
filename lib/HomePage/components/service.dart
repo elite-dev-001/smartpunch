@@ -40,31 +40,31 @@ class Service extends StatelessWidget {
                 child: Icon(
                     icon,
                     color: Color(color),
-                    size: 25,
+                    size: 30,
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.125,
+                height: MediaQuery.of(context).size.height * 0.155,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 8.0),
+                      padding: const EdgeInsets.only(bottom: 5.0),
                       child: Text(firstText, style: TextStyle(
                         color: Color(color),
-                        fontSize: 16.0,
+                        fontSize: 18.0,
                         fontWeight: FontWeight.bold
                       ),),
                     ),
                     Text(secondText, style: const TextStyle(
-                      fontSize: 10.0,
+                      fontSize: 14.0,
                       fontWeight: FontWeight.w600
                     ),)
                   ],
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.075,
+                height: MediaQuery.of(context).size.height * 0.04,
                 child: Text(lastText, style: TextStyle(
                     color: Color(color),
                     fontSize: 16.0,

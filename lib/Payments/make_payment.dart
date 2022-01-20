@@ -33,7 +33,7 @@ class MakePayment extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Make Payments'),
-        backgroundColor: const Color(0xff40196D),
+        backgroundColor: const Color(0xFF0D60D8),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 10.0),
@@ -155,7 +155,7 @@ class MakePayment extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
-                    color: Color(0xff40196D),
+                    color: Color(0xFF0D60D8),
                   ),
                   child: const Padding(
                     padding: EdgeInsets.symmetric(vertical: 15.0),

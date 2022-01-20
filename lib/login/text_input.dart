@@ -17,16 +17,16 @@ class MyTextInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormFieldWrapper(
-      borderColor: const Color(0xff40196D),
-      borderFocusedColor: const Color(0xff40196D),
+      borderColor: const Color(0xFF0D60D8),
+      borderFocusedColor: const Color(0xFF0D60D8),
       formField: TextFormField(
         readOnly: readOnly,
         controller: controller,
-        cursorColor: const Color(0xff40196D),
+        cursorColor: const Color(0xFF0D60D8),
         keyboardType: keyboardType,
         decoration: InputDecoration(
           border: InputBorder.none,
-          focusColor: const Color(0xff40196D),
+          focusColor: const Color(0xFF0D60D8),
           hintText: hintText,
         ),
       ),

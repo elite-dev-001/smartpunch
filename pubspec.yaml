@@ -85,6 +85,10 @@ flutter:
     - images/phed.png
     - images/wallet.png
     - images/error.png
+    - images/ob1.png
+    - images/ob2.png
+    - images/ob3.png
+    - images/ob4.png
     - images/providers/bedc.png
     - images/providers/eedc.jpeg
     - images/providers/ibadan.jpeg
