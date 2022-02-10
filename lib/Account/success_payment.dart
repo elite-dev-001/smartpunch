@@ -2,8 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:smartpunch/HomePage/home.dart';
-
+import 'package:smartpunch/Payments/token.dart';
 
 class SuccessPayment extends StatefulWidget {
   const SuccessPayment({Key? key}) : super(key: key);
@@ -13,7 +12,6 @@ class SuccessPayment extends StatefulWidget {
 }
 
 class _SuccessPaymentState extends State<SuccessPayment> {
-
   late Timer _timer;
   int _start = 3;
 
@@ -21,12 +19,14 @@ class _SuccessPaymentState extends State<SuccessPayment> {
     const oneSec = Duration(seconds: 1);
     _timer = Timer.periodic(
       oneSec,
-          (Timer timer) {
+      (Timer timer) {
         if (_start == 0) {
-          Navigator.push(context, PageTransition(
-              type: PageTransitionType.leftToRight,
-              duration: const Duration(milliseconds: 600),
-              child: const Home()));
+          Navigator.push(
+              context,
+              PageTransition(
+                  type: PageTransitionType.rightToLeft,
+                  duration: const Duration(milliseconds: 600),
+                  child: const Token()));
           dispose();
         } else {
           setState(() {
@@ -65,24 +65,29 @@ class _SuccessPaymentState extends State<SuccessPayment> {
                     children: [
                       SizedBox(
                         height: MediaQuery.of(context).size.height * .2,
-                        child: Image.asset('images/check2.png',),
+                        child: Image.asset(
+                          'images/check2.png',
+                        ),
                       ),
                       const Padding(
                         padding: EdgeInsets.all(12.0),
-                        child: Text('Payment Successful', style: TextStyle(
-                            color: Color(0xFF0D60D8),
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold
-                        ),),
+                        child: Text(
+                          'Payment Successful',
+                          style: TextStyle(
+                              color: Color(0xFF0D60D8),
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                        child: Text(_start.toString(), style: const TextStyle(
-                            color: Color(0xFF0D60D8),
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold
-                        ),)
-                      ),
+                          padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                          child: Text(
+                            _start.toString(),
+                            style: const TextStyle(
+                                color: Color(0xFF0D60D8),
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold),
+                          )),
                     ],
                   ),
                 )

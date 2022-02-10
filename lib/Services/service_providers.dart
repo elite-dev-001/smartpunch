@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
-
 class ServiceProviders extends StatelessWidget {
   const ServiceProviders({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     const serviceProviders = [
       {
         'image': 'images/providers/bedc.png',
@@ -24,22 +22,13 @@ class ServiceProviders extends StatelessWidget {
         'image': 'images/ikeja.png',
         'name': 'Ikeja Electrical Distribution Company'
       },
-      {
-        'image': 'images/providers/kedco.png',
-        'name': 'KEDCO'
-      },
+      {'image': 'images/providers/kedco.png', 'name': 'KEDCO'},
       {
         'image': 'images/providers/phcn.png',
         'name': 'PHCN Postpaid (ALL ZONES)'
       },
-      {
-        'image': 'images/providers/phcn.png',
-        'name': 'PHCN Prepaid (EKO)'
-      },
-      {
-        'image': 'images/phed.png',
-        'name': 'PHED Postpaid'
-      },
+      {'image': 'images/providers/phcn.png', 'name': 'PHCN Prepaid (EKO)'},
+      {'image': 'images/phed.png', 'name': 'PHED Postpaid'},
       {
         'image': 'images/providers/yedc.jpeg',
         'name': 'Yola Electrical Distribution Company'
@@ -66,13 +55,18 @@ class ServiceProviders extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListView(
-          children: serviceProviders.map((e) => ListTile(
-            leading: CircleAvatar(backgroundImage: AssetImage(e['image'].toString()),),
-            title: Text(e['name'].toString(), style: const TextStyle(
-                color: Color(0xFF0D60D8)
-            ),),
-            dense: true,
-          )).toList(),
+          children: serviceProviders
+              .map((e) => ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage(e['image'].toString()),
+                    ),
+                    title: Text(
+                      e['name'].toString(),
+                      style: const TextStyle(color: Color(0xFF0D60D8)),
+                    ),
+                    dense: true,
+                  ))
+              .toList(),
         ),
       ),
     );

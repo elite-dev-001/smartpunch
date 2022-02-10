@@ -1,35 +1,41 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_paystack_client/flutter_paystack_client.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:smartpunch/Account/error_payment.dart';
 import 'package:smartpunch/Account/success_payment.dart';
 import 'package:smartpunch/login/text_input.dart';
-import 'package:intl/intl.dart';
 
-
-class MakePayment extends StatelessWidget {
+class MakePayment extends StatefulWidget {
   const MakePayment({Key? key}) : super(key: key);
 
   @override
+  State<MakePayment> createState() => _MakePaymentState();
+}
+
+class _MakePaymentState extends State<MakePayment> {
+  TextEditingController deviceController = TextEditingController()
+    ..text = 'David Oyinkuro';
+  TextEditingController controller = TextEditingController()
+    ..text = 'ASDF12426882-0015278';
+  TextEditingController serviceController = TextEditingController()
+    ..text = 'Enugu Electricity Distribution Company';
+  TextEditingController packageController = TextEditingController()
+    ..text = 'Prepaid';
+  TextEditingController customerController = TextEditingController()
+    ..text = '010116046605';
+  TextEditingController amountController = TextEditingController();
+
+  var publicKey = 'pk_test_c8bd6ba27978f93fde84d7e44903dd65050853b9';
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    PaystackClient.initialize(publicKey);
+  }
+
+  @override
   Widget build(BuildContext context) {
-
-    TextEditingController controller = TextEditingController()..text =
-        'ASDF12426882-0015278';
-    TextEditingController serviceController = TextEditingController()..text =
-        'Enugu Electricity Distribution Company';
-    TextEditingController packageController = TextEditingController()..text =
-        'Prepaid';
-    TextEditingController customerController = TextEditingController()..text =
-        '010116046605';
-    TextEditingController amountController = TextEditingController();
-
-
-    currency(context) {
-      // Locale locale = Localizations.localeOf(context);
-      var format = NumberFormat.simpleCurrency(locale: Platform.localeName, name: 'NGN');
-      return format;
-    }
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Make Payments'),
@@ -38,11 +44,10 @@ class MakePayment extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 10.0),
             child: IconButton(
-                onPressed: (){
+                onPressed: () {
                   showAlertDialog(context);
                 },
-                icon: const Icon(Icons.delete_forever)
-            ),
+                icon: const Icon(Icons.delete_forever)),
           )
         ],
       ),
@@ -53,15 +58,34 @@ class MakePayment extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 0.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.symmetric(
+                            vertical: 5.0, horizontal: 5.0),
+                        child: Text('Device Name'),
+                      ),
+                      MyTextInput(
+                        hintText: 'hintText',
+                        controller: deviceController,
+                        keyboardType: TextInputType.none,
+                        readOnly: true,
+                      ),
+                    ],
+                  ),
+                ),
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
                   child: Text('Device ID'),
                 ),
                 MyTextInput(
-                    hintText: 'hintText',
-                    controller: controller,
-                    keyboardType: TextInputType.none,
-                    readOnly: true,
+                  hintText: 'hintText',
+                  controller: controller,
+                  keyboardType: TextInputType.none,
+                  readOnly: true,
                 ),
               ],
             ),
@@ -71,7 +95,8 @@ class MakePayment extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
+                    padding:
+                        EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
                     child: Text('Service provider'),
                   ),
                   MyTextInput(
@@ -89,7 +114,8 @@ class MakePayment extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
+                    padding:
+                        EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
                     child: Text('Package'),
                   ),
                   MyTextInput(
@@ -107,7 +133,8 @@ class MakePayment extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
+                    padding:
+                        EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
                     child: Text('Customer ID'),
                   ),
                   MyTextInput(
@@ -125,12 +152,13 @@ class MakePayment extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 5.0, horizontal: 5.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text('Amount'),
-                        Text('Balance: ${currency(context).currencySymbol} 15,972.06')
+                      children: const [
+                        Text('Amount'),
+                        // Text('Balance: ${currency(context).currencySymbol} 15,972.06')
                       ],
                     ),
                   ),
@@ -145,11 +173,29 @@ class MakePayment extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10.0),
               child: GestureDetector(
-                onTap: () {
-                  Navigator.push(context, PageTransition(
-                      type: PageTransitionType.rightToLeft,
-                      duration: const Duration(milliseconds: 600),
-                      child: const SuccessPayment()));
+                onTap: () async {
+                  final charge = Charge()
+                    ..email = 'testemail@gmail.com'
+                    ..amount = 10000
+                    ..reference =
+                        'ref_${DateTime.now().millisecondsSinceEpoch}';
+                  final res =
+                      await PaystackClient.checkout(context, charge: charge);
+                  if (res.status) {
+                    Navigator.push(
+                        context,
+                        PageTransition(
+                            type: PageTransitionType.rightToLeft,
+                            duration: const Duration(milliseconds: 600),
+                            child: const SuccessPayment()));
+                  } else {
+                    Navigator.push(
+                        context,
+                        PageTransition(
+                            type: PageTransitionType.rightToLeft,
+                            duration: const Duration(milliseconds: 600),
+                            child: const ErrorPayment()));
+                  }
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
@@ -159,12 +205,13 @@ class MakePayment extends StatelessWidget {
                   ),
                   child: const Padding(
                     padding: EdgeInsets.symmetric(vertical: 15.0),
-                    child: Text('Make Payments', textAlign: TextAlign.center,
+                    child: Text(
+                      'Make Payments',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 20,
                           color: Colors.white,
-                          fontWeight: FontWeight.bold
-                      ),
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
@@ -180,18 +227,20 @@ class MakePayment extends StatelessWidget {
 showAlertDialog(BuildContext context) {
   // Create button
   Widget okButton = TextButton(
-    child: const Text("OK", style: TextStyle(
-        color: Colors.green
-    ),),
+    child: const Text(
+      "OK",
+      style: TextStyle(color: Colors.green),
+    ),
     onPressed: () {
       Navigator.of(context).pop();
     },
   );
 
   Widget cancelButton = TextButton(
-    child: const Text("Cancel", style: TextStyle(
-        color: Colors.red
-    ),),
+    child: const Text(
+      "Cancel",
+      style: TextStyle(color: Colors.red),
+    ),
     onPressed: () {
       Navigator.of(context).pop();
     },

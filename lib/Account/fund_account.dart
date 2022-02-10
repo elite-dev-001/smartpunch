@@ -6,7 +6,6 @@ import 'package:smartpunch/Account/success_payment.dart';
 import 'package:smartpunch/login/text_input.dart';
 import 'package:flutter_paystack_client/flutter_paystack_client.dart';
 
-
 class FundAccount extends StatefulWidget {
   const FundAccount({Key? key}) : super(key: key);
 
@@ -42,13 +41,13 @@ class _FundAccountState extends State<FundAccount> {
               ),
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 25.0),
-                child: Text('How much would you like to add to your account',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Color(0xFF0D60D8),
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18
-                ),
+                child: Text(
+                  'How much would you like to add to your account',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color(0xFF0D60D8),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18),
                 ),
               ),
               Padding(
@@ -56,32 +55,34 @@ class _FundAccountState extends State<FundAccount> {
                 child: MyTextInput(
                     hintText: 'Enter Amount',
                     controller: amountController,
-                    keyboardType: TextInputType.number
-                ),
+                    keyboardType: TextInputType.number),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10.0),
                 child: GestureDetector(
                   onTap: () async {
-
                     final charge = Charge()
-                        ..email = 'testemail@gmail.com'
-                        ..amount = 10000
-                        ..reference = 'ref_${DateTime.now().millisecondsSinceEpoch}';
+                      ..email = 'testemail@gmail.com'
+                      ..amount = 10000
+                      ..reference =
+                          'ref_${DateTime.now().millisecondsSinceEpoch}';
                     final res =
                         await PaystackClient.checkout(context, charge: charge);
-                    if(res.status) {
-                      Navigator.push(context, PageTransition(
-                          type: PageTransitionType.rightToLeft,
-                          duration: const Duration(milliseconds: 600),
-                          child: const SuccessPayment()));
-                    }else {
-                      Navigator.push(context, PageTransition(
-                          type: PageTransitionType.rightToLeft,
-                          duration: const Duration(milliseconds: 600),
-                          child: const ErrorPayment()));
+                    if (res.status) {
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              duration: const Duration(milliseconds: 600),
+                              child: const SuccessPayment()));
+                    } else {
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              duration: const Duration(milliseconds: 600),
+                              child: const ErrorPayment()));
                     }
-
                   },
                   child: Container(
                     width: MediaQuery.of(context).size.width,
@@ -91,12 +92,13 @@ class _FundAccountState extends State<FundAccount> {
                     ),
                     child: const Padding(
                       padding: EdgeInsets.symmetric(vertical: 15.0),
-                      child: Text('Proceed', textAlign: TextAlign.center,
+                      child: Text(
+                        'Proceed',
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 20,
                             color: Colors.white,
-                            fontWeight: FontWeight.bold
-                        ),
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),

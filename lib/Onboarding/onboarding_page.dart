@@ -4,8 +4,6 @@ import 'package:introduction_screen/introduction_screen.dart';
 import 'package:smartpunch/login/login.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
 
-
-
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({Key? key}) : super(key: key);
 
@@ -24,10 +22,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     text: "Your number 1 Automated Electricity Solutions",
     textType: TextType.TyperAnimatedText,
     textStyle: const TextStyle(
-        fontSize: 18.0,
-        color: Color(0xFF000000),
-        fontWeight: FontWeight.bold
-    ),
+        fontSize: 18.0, color: Color(0xFF000000), fontWeight: FontWeight.bold),
     backgroundColor: Colors.white,
   );
 
@@ -37,23 +32,22 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     );
   }
 
-
-
   Widget _buildImage(String assetName, [double width = 450]) {
-    return Image.asset('images/$assetName', width: width,);
+    return Image.asset(
+      'images/$assetName',
+      width: width,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-
     const bodyStyle = TextStyle(fontSize: 19.0, color: Color(0xFF000000));
 
     const pageDecoration = PageDecoration(
       titleTextStyle: TextStyle(
           fontSize: 25.0,
           fontWeight: FontWeight.w600,
-          color: Color(0xFF000000)
-      ),
+          color: Color(0xFF000000)),
       bodyTextStyle: bodyStyle,
       descriptionPadding: EdgeInsets.only(bottom: 40.0),
       pageColor: Colors.white,
@@ -67,7 +61,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       pages: [
         PageViewModel(
           title: "Enjoy a Pleasant Service",
-          body: "Control your electricty bill payments from the comfort of your home"
+          body:
+              "Control your electricty bill payments from the comfort of your home"
               " school or work place with just our mobile app and our Smart Punch "
               "device  ",
           decoration: pageDecoration.copyWith(
@@ -80,7 +75,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         ),
         PageViewModel(
           title: "Integrated Payment Platform",
-          body: "Create an account, fund your account, and make seamless integrated "
+          body:
+              "Create an account, fund your account, and make seamless integrated "
               "electricity bill payments. ",
           decoration: pageDecoration.copyWith(
             bodyFlex: 2,
@@ -147,6 +143,3 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     );
   }
 }
-
-
-

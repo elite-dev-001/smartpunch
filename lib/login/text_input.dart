@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:text_form_field_wrapper/text_form_field_wrapper.dart';
 
 class MyTextInput extends StatelessWidget {
-  const MyTextInput({Key? key,
-    required this.hintText,
-    required this.controller,
-    required this.keyboardType,
-    this.readOnly = false
-  }) : super(key: key);
+  const MyTextInput(
+      {Key? key,
+      required this.hintText,
+      required this.controller,
+      required this.keyboardType,
+      this.readOnly = false})
+      : super(key: key);
 
   final String hintText;
   final TextEditingController controller;
@@ -34,4 +35,3 @@ class MyTextInput extends StatelessWidget {
     );
   }
 }
-

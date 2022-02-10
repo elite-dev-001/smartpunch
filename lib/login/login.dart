@@ -24,9 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: const Color(0xff40196D)
-      ),
+      theme: ThemeData(primaryColor: const Color(0xff40196D)),
       home: Scaffold(
         body: ListView(
           children: [
@@ -37,9 +35,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.35,
-                      child: Image.asset('images/logo.png'),
-                      width: MediaQuery.of(context).size.width * .70,
+                    height: MediaQuery.of(context).size.height * 0.35,
+                    child: Image.asset('images/logo.png'),
+                    width: MediaQuery.of(context).size.width * .70,
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * .5,
@@ -55,36 +53,49 @@ class _LoginScreenState extends State<LoginScreen> {
                           //     color: Color(0xff40196D)
                           // ),),
                           Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 12.0),
-                            child: MyTextInput(hintText: 'Phone Number',controller: numberController,keyboardType: TextInputType.phone,)
-                          ),
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 12.0),
+                              child: MyTextInput(
+                                hintText: 'Phone Number',
+                                controller: numberController,
+                                keyboardType: TextInputType.phone,
+                              )),
                           Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 12.0),
-                            child: MyTextInput(hintText: 'Password',controller: passwordController,keyboardType: TextInputType.visiblePassword,)
-                          ),
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 12.0),
+                              child: MyTextInput(
+                                hintText: 'Password',
+                                controller: passwordController,
+                                keyboardType: TextInputType.visiblePassword,
+                              )),
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 10.0),
                             child: GestureDetector(
                               onTap: () {
-                                Navigator.push(context, PageTransition(
-                                    type: PageTransitionType.rightToLeft,
-                                    duration: const Duration(milliseconds: 600),
-                                    child: const Home()));
+                                Navigator.push(
+                                    context,
+                                    PageTransition(
+                                        type: PageTransitionType.rightToLeft,
+                                        duration:
+                                            const Duration(milliseconds: 600),
+                                        child: const Home()));
                               },
                               child: Container(
                                 width: MediaQuery.of(context).size.width,
                                 decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)),
                                   color: Color(0xFF0D60D8),
                                 ),
                                 child: const Padding(
                                   padding: EdgeInsets.symmetric(vertical: 15.0),
-                                  child: Text('Login', textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold
-                                  ),
+                                  child: Text(
+                                    'Login',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                 ),
                               ),
@@ -97,16 +108,22 @@ class _LoginScreenState extends State<LoginScreen> {
                               children: [
                                 const Text('Don\'t have an account? '),
                                 GestureDetector(
-                                  onTap: (){
-                                    Navigator.push(context, PageTransition(
-                                        type: PageTransitionType.bottomToTop,
-                                        duration: const Duration(milliseconds: 800),
-                                        child: const Register()));
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        PageTransition(
+                                            type:
+                                                PageTransitionType.bottomToTop,
+                                            duration: const Duration(
+                                                milliseconds: 800),
+                                            child: const Register()));
                                   },
-                                  child: const Text('Register', style: TextStyle(
-                                      color: Color(0xFF0D60D8),
-                                    fontWeight: FontWeight.bold
-                                  ),),
+                                  child: const Text(
+                                    'Register',
+                                    style: TextStyle(
+                                        color: Color(0xFF0D60D8),
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 )
                               ],
                             ),

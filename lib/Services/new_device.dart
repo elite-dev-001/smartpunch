@@ -5,16 +5,16 @@ import 'package:smartpunch/Services/dropdown.dart';
 import 'package:smartpunch/Services/package.dart';
 import 'package:smartpunch/login/text_input.dart';
 
-
 class NewDevice extends StatelessWidget {
   const NewDevice({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     TextEditingController deviceController = TextEditingController();
     TextEditingController numberController = TextEditingController();
     TextEditingController meterController = TextEditingController();
+    TextEditingController packageController = TextEditingController()
+      ..text = 'Prepaid';
 
     return Scaffold(
       appBar: AppBar(
@@ -22,25 +22,30 @@ class NewDevice extends StatelessWidget {
         backgroundColor: const Color(0xFF0D60D8),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
         child: ListView(
           // mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 0.0),
+              child: MyTextInput(
+                  hintText: 'Enter a Name for your Device',
+                  controller: deviceController,
+                  keyboardType: TextInputType.text),
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20.0),
               child: MyTextInput(
                   hintText: 'Enter Device ID',
                   controller: deviceController,
-                  keyboardType: TextInputType.text
-              ),
+                  keyboardType: TextInputType.text),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 5.0),
               child: MyTextInput(
                   hintText: 'Enter Device Phone Number',
                   controller: numberController,
-                  keyboardType: TextInputType.phone
-              ),
+                  keyboardType: TextInputType.phone),
             ),
             const DropDown(),
             Padding(
@@ -48,18 +53,32 @@ class NewDevice extends StatelessWidget {
               child: MyTextInput(
                   hintText: 'Customer ID (Meter Number)',
                   controller: meterController,
-                  keyboardType: TextInputType.number
+                  keyboardType: TextInputType.number),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  MyTextInput(
+                    hintText: 'hintText',
+                    controller: packageController,
+                    keyboardType: TextInputType.none,
+                    readOnly: true,
+                  ),
+                ],
               ),
             ),
-            const Package(),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10.0),
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(context, PageTransition(
-                      type: PageTransitionType.rightToLeft,
-                      duration: const Duration(milliseconds: 600),
-                      child: const DeviceSuccess()));
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          duration: const Duration(milliseconds: 600),
+                          child: const DeviceSuccess()));
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
@@ -69,12 +88,13 @@ class NewDevice extends StatelessWidget {
                   ),
                   child: const Padding(
                     padding: EdgeInsets.symmetric(vertical: 15.0),
-                    child: Text('Register', textAlign: TextAlign.center,
+                    child: Text(
+                      'Register',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 20,
                           color: Colors.white,
-                          fontWeight: FontWeight.bold
-                      ),
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),

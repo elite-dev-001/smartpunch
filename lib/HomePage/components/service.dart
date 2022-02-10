@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-
 class Service extends StatelessWidget {
-  const Service({Key? key,
+  const Service({
+    Key? key,
     required this.icon,
     required this.firstText,
     required this.secondText,
@@ -26,9 +26,8 @@ class Service extends StatelessWidget {
         height: MediaQuery.of(context).size.height * 0.28,
         width: MediaQuery.of(context).size.width * 0.42,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          color: Color(color).withOpacity(0.4)
-        ),
+            borderRadius: BorderRadius.circular(10.0),
+            color: Color(color).withOpacity(0.2)),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 10),
           child: Column(
@@ -38,9 +37,9 @@ class Service extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.05,
                 child: Icon(
-                    icon,
-                    color: Color(color),
-                    size: 30,
+                  icon,
+                  color: Color(color),
+                  size: 30,
                 ),
               ),
               SizedBox(
@@ -50,26 +49,31 @@ class Service extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(bottom: 5.0),
-                      child: Text(firstText, style: TextStyle(
-                        color: Color(color),
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold
-                      ),),
+                      child: Text(
+                        firstText,
+                        style: TextStyle(
+                            color: Color(color),
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
-                    Text(secondText, style: const TextStyle(
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.w600
-                    ),)
+                    Text(
+                      secondText,
+                      style: const TextStyle(
+                          fontSize: 14.0, fontWeight: FontWeight.w600),
+                    )
                   ],
                 ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.04,
-                child: Text(lastText, style: TextStyle(
-                    color: Color(color),
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold
-                ),),
+                child: Text(
+                  lastText,
+                  style: TextStyle(
+                      color: Color(color),
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
             ],
           ),

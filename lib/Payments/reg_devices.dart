@@ -3,31 +3,30 @@ import 'package:page_transition/page_transition.dart';
 import 'package:smartpunch/Payments/make_payment.dart';
 import 'package:smartpunch/Services/new_device.dart';
 
-
 class RegisteredDevices extends StatelessWidget {
-  const RegisteredDevices({Key? key}) : super(key: key);
+  final bool fromDrawer;
+  const RegisteredDevices({Key? key, required this.fromDrawer}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     const registeredDevices = [
       {
-        'name': 'Jos Electrical Distribution Company',
+        'name': 'Kuro Jeremiah',
         'image': 'images/providers/jos.png',
         'meterID': 'Meter ID: 14202476900',
       },
       {
-        'name': 'Enugu Electrical Distribution Company',
+        'name': 'Bobby Zagha',
         'image': 'images/providers/eedc.jpeg',
         'meterID': 'Meter ID: 010116046605',
       },
       {
-        'name': 'KEDCO',
+        'name': 'David Oyinkuro',
         'image': 'images/providers/kedco.png',
         'meterID': 'Meter ID: 010117014615',
       },
       {
-        'name': 'Yola Electrical Distribution Company',
+        'name': 'Anthony Umusike',
         'image': 'images/providers/yedc.jpeg',
         'meterID': 'Meter ID: 22132445533',
       },
@@ -36,44 +35,50 @@ class RegisteredDevices extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: const Color(0xFF0D60D8),
-        onPressed: (){
-          Navigator.push(context, PageTransition(
-              type: PageTransitionType.bottomToTop,
-              duration: const Duration(milliseconds: 600),
-              child: const NewDevice()));
+        onPressed: () {
+          Navigator.push(
+              context,
+              PageTransition(
+                  type: PageTransitionType.bottomToTop,
+                  duration: const Duration(milliseconds: 600),
+                  child: const NewDevice()));
         },
         child: const Icon(Icons.add),
       ),
-      appBar: AppBar(
-        title: const Text('Load Devices'),
+      appBar: fromDrawer ?null : AppBar(
+        title: const Text('My Devices'),
         backgroundColor: const Color(0xFF0D60D8),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListView(
-          children: registeredDevices.map((e) => ListTile(
-            leading: CircleAvatar(backgroundImage: AssetImage(e['image'].toString()),),
-            title: Text(e['name'].toString()),
-            subtitle: Text(e['meterID'].toString(), style: const TextStyle(
-                color: Color(0xFF0D60D8),
-                fontWeight: FontWeight.bold
-            ),),
-            trailing: const Icon(
-                Icons.arrow_forward_ios,
-                color: Color(0xFF0D60D8)
-            ),
-            onTap: (){
-              Navigator.push(context, PageTransition(
-                  type: PageTransitionType.rightToLeft,
-                  duration: const Duration(milliseconds: 600),
-                  child: const MakePayment()));
-            },
-            dense: true,
-          )).toList(),
+          children: registeredDevices
+              .map((e) => ListTile(
+                    leading: const CircleAvatar(
+                      child: Icon(Icons.account_circle_sharp),
+                    ),
+                    title: Text(e['name'].toString()),
+                    subtitle: Text(
+                      e['meterID'].toString(),
+                      style: const TextStyle(
+                          color: Color(0xFF0D60D8),
+                          fontWeight: FontWeight.bold),
+                    ),
+                    trailing: const Icon(Icons.arrow_forward_ios,
+                        color: Color(0xFF0D60D8)),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              duration: const Duration(milliseconds: 600),
+                              child: const MakePayment()));
+                    },
+                    // dense: true,
+                  ))
+              .toList(),
         ),
       ),
     );
   }
 }
-
-
